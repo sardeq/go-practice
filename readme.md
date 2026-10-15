@@ -485,3 +485,36 @@ func main() {
 }
 ```
 
+# Currying
+_Function currying turns a function with multiple arguments into successive functions that each accept one argument._
+
+For example, we can supply a shirt's unit price now and the quantity later:
+
+```Go
+func main() {
+	shirtCost := curriedCost(20)
+	fmt.Println(shirtCost(3))
+	// prints 60
+
+	fmt.Println(shirtCost(5))
+	// prints 100
+}
+
+func cost(unitPrice, quantity int) int {
+	return unitPrice * quantity
+}
+
+func curriedCost(unitPrice int) func(int) int {
+	return func(quantity int) int {
+		return cost(unitPrice, quantity)
+	}
+}
+```
+>curriedCost(20) returns a closure that remembers the unit price and waits for a quantity. Calling shirtCost(3) supplies that quantity and calls cost(20, 3).
+
+You can also call the returned function immediately:
+```Go
+
+cost(20, 3)        // returns 60
+curriedCost(20)(3) // returns 60
+```
