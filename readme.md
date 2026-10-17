@@ -319,6 +319,62 @@ func main() {
     fmt.Println(user)
 }
 ```
+### Embedded Structs
+> An embedded struct lets you access another struct's fields directly, giving Go a behavior similar to inheritance, but without true inheritance.
+```Go
+type Address struct {
+    City    string
+    Country string
+}
+
+type User struct {
+    Name string
+    Age  int
+    Address
+}
+
+func main() {
+    user := User{
+        Name: "Sadeq",
+        Age:  22,
+        Address: Address{
+            City:    "Amman",
+            Country: "Jordan",
+        },
+    }
+
+    fmt.Println(user.Name)
+    fmt.Println(user.City)
+}
+```
+
+### Nested Structs
+```Go
+type Address struct {
+    City    string
+    Country string
+}
+
+type User struct {
+    Name    string
+    Age     int
+    Address Address
+}
+
+func main() {
+    user := User{
+        Name: "Sadeq",
+        Age:  22,
+        Address: Address{
+            City:    "Amman",
+            Country: "Jordan",
+        },
+    }
+
+    fmt.Println(user.Name)
+    fmt.Println(user.Address.City)
+}
+```
 
 # Pointers
 ```Go
