@@ -10,6 +10,7 @@ func main() {
 	fmt.Println(quote.Go())
 
 	//handleMaps()
-	handleChar()
+	//handleChar()
+	runStructs()
 
 }
