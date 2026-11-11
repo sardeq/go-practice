@@ -11,6 +11,10 @@ func main() {
 
 	//handleMaps()
 	//handleChar()
-	runStructs()
+	//runStructs()
+	// point()
+	// slicePoint()
+
+	pointExample()
 
 }
