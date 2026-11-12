@@ -15,6 +15,8 @@ func main() {
 	// point()
 	// slicePoint()
 
-	pointExample()
+	//pointExample()
+	//
+	rnRt()
 
 }
