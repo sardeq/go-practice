@@ -19,5 +19,8 @@ func main() {
 	//rnRt()
 
 	//chn()
-	shCheck()
+	//shCheck()
+	runGeneric()
+
+	marsha()
 }
