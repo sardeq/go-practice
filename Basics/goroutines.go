@@ -35,7 +35,7 @@ func dbCall(i int) {
 
 func save(result string) {
 	m.Lock()
-	results = append(results, dbData[i])
+	results = append(results, result)
 	m.Unlock()
 }
 
